@@ -51,7 +51,7 @@ class CategoryPage extends Component{
 function mapStateToProps(state){
   return{
     posts : state.posts,
-    categories: state.categories
+    categories: state.categories,
   }
 }
 
