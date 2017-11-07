@@ -24,9 +24,27 @@ class PostsPage extends Component{
               </div>
             </div>
           </div>
+          <div className="row margin-top-10">
+            <div className="col-md-2">
+              <label className="control-label">Order By:</label>
+              <select className="form-control">
+                <option value="voteScore">Vote Score</option>
+                <option value="timestamp">TimeStamp</option>
+              </select>
+            </div>
+            <div className="col-md-2 justify-content-center ml-md-auto">
+              <button className="btn btn-dark margin-top-10" onClick={this.openModal}><i className="fa fa-plus"></i> Create Post</button>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12">
+                  <p> PostList will go here</p>
+            </div>
+          </div>
         </div>
 
-      </div>
+
+        </div>
     )
   }
 
