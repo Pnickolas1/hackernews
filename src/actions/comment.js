@@ -39,9 +39,35 @@ export function subtractCommentVote(commentId){
   }
 }
 
-
+export function addNewComment(comment){
+  return function (dispatch ){
+    return api.createComment(comment).then(response => {
+      if(response){
+        return dispatch(updateComment(response.data))
+      }
+    })
+  }
+}
  
+export function editComment(comment){
+  return function (dispatch){
+    return api.updateComment(comment).then(response => {
+      if(response){
+        return dispatch(updateComment(response.data))
+      }
+    })
+  }
+}
 
+export function removeComment(comment){
+  return function (dispatch){
+    return api.updateComment(comment).then(response => {
+      if (response){
+        return dispatch(updateComment(response.data))
+      }
+    })
+  }
+}
 
 
 
