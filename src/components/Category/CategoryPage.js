@@ -4,8 +4,7 @@ import * as actions from '../../actions/posts'
 import { connect } from 'react-redux';
 import * as helpers from '../../utils/helpers'
 import { Navbar } from '../NavBar';
-
-//import PostList from '../Posts/PostList/'
+import PostList from '../Posts/PostList';
 
 class CategoryPage extends Component{
   constructor(props, context){
@@ -40,7 +39,7 @@ class CategoryPage extends Component{
   }
 
   render(){
-  console.log(this.props)
+  console.log("props from CategoryPage: ", this.props)
     return(
       <div className="container-fluid" style={{padding: 0}}>
       <Navbar />
@@ -67,7 +66,7 @@ class CategoryPage extends Component{
 
           <div className="row">
             <div className="col-md-12">
-              <p>this will where postlist goes</p>
+              <PostList posts={this.state.posts} />
             </div>
           </div>
         </div>
