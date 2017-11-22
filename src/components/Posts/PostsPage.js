@@ -8,6 +8,7 @@ import * as helpers from '../../utils/helpers';
 import Modal from 'react-modal';
 import shortid from 'shortid'
 import PostList from './PostList'
+import FaClose from 'react-icons/lib/fa/close'
 
 class PostsPage extends Component{
   constructor(props, context){
@@ -51,9 +52,9 @@ class PostsPage extends Component{
     })
   }
 
-  closeModal = () =>{
+  closeModal = () => {
     this.setState({
-      opeenModal: false
+      openModal: false
     })
   }
 
@@ -124,15 +125,15 @@ class PostsPage extends Component{
           </div>
         </div>
 
-        <Modal isOpen={this.state.openModal} contentLabel="Create Post">
-          <i className="fa fa-close pull-right" onClick={this.closeModal}></i>
+        <Modal isOpen={this.state.openModal} contentLabel="Create Modal">
+        <i className="pull-right" onClick={this.closeModal}><FaClose /></i>
           <div className="row">
             <div className="col-md-12">
             <h4 style={{textAlign: 'center'}}>Add New Post</h4>
               <form onSubmit={this.createPost}>
                   <div className="form-group">
                     <label>Title</label>
-                    <input type="text" className="form-control" id="title" placeholder="Title" value={this.state.newPost.title} onChange={this.handleChange0} required={true} />
+                    <input type="text" className="form-control" id="title" placeholder="Title" value={this.state.newPost.title} onChange={this.handleChange} required={true} />
                   </div>
                   <div className="form-group">
                     <label>Body</label>
@@ -140,10 +141,11 @@ class PostsPage extends Component{
                   </div>
                   <div className="form-check">
                     <label>Categories</label>
-                    <select className="form-control" id="category" defaultValue={this.state.newPost.category} onChange={this.handleChange} required={true} />
+                    <select className="form-control" id="category" defaultValue={this.state.newPost.category} onChange={this.handleChange} required={true}>
                     {this.props.categories.map(category => (
                       <option value={category.name} key={category.path}>{category.name}</option>
                       ))}
+                    </select>
                   </div>
                   <button type="submit" className="btn btn-primary">Create Post</button>
               </form>
