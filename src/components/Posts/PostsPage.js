@@ -3,13 +3,34 @@ import {Navbar } from '../NavBar'
 import { bindActionCreators } from 'redux';
 import {connect } from 'react-redux';
 import * as postActions from '../../actions/posts';
+import * as commentActions from '../../actions/comments'
+import * as helpers from '../../utils/helpers';
 import Modal from 'react-modal';
+import shortid from 'shortid'
 
 class PostsPage extends Component{
+  constructor(props, context){
+    super(props, context);
+    this.changeSortMethod = this.changeSortMethod.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+    this.state = {
+      openModal = false,
+      isEditing = false,
+      newPost :{
+        'title': '',
+        'body': '',
+        'category': 'react'
+      }
+    }
+  }
+
+  componentWillMount(){
+    this.props.actions.loadPosts()
+  }
 
   render(){
     return(
-      <div className="container-fludi" style={{padding: 0}}>
+      <div className="container-fluid" style={{padding: 0}}>
         <Navbar />
         <div className="container">
           <div className="row margin-top-10">

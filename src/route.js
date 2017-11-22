@@ -7,7 +7,7 @@ import { Route, Switch } from 'react-router';
 export default (
   <div>
     <Switch>
-      <Route exact path="/" component={CategoryPage} />
+      <Route exact path="/" component={PostsPage} />
       <Route expath path="/postspage" component={PostsPage} />
       <Route exact path="/:category" component={CategoryPage} />
     </Switch>

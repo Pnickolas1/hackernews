@@ -96,7 +96,7 @@ export function deleteComment(comment){
   return {
     type: DELETE_COMMENT,
     comment: comment.id,
-    postId: commment.parentId
+    postId: comment.parentId
   }
 }
 
