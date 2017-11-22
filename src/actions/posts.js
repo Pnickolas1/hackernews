@@ -10,7 +10,7 @@ export const DOWN_VOTE = 'DOWN_VOTE'
 
 export function loadPosts(){
   return function (dispatch){
-    return api.getAllPosts().then( response =>{
+    api.getAllPosts().then( response =>{
       if(response){
         //dispatch the action
         console.log("getAllPosts",  response)
