@@ -23,7 +23,7 @@ export function addCommentVote(commentId){
   return function (dispatch){
     return api.incrementCommentVote(commentId).then(response =>{
       if(response){
-        dispatch(updateComment(response.data))
+        dispatch(addComment(response.data))
       }
     })
   }
@@ -63,7 +63,7 @@ export function removeComment(comment){
   return function (dispatch){
     return api.updateComment(comment).then(response => {
       if (response){
-        return dispatch(updateComment(response.data))
+        return dispatch(deleteComment(response.data))
       }
     })
   }
@@ -87,6 +87,22 @@ export function getComments(postId, comments){
 export function updateComment(comment){
   return {
     type: UPDATE_COMMENT,
+    comment: comment,
+    postId: comment.parentId
+  }
+}
+
+export function deleteComment(comment){
+  return {
+    type: DELETE_COMMENT,
+    comment: comment.id,
+    postId: commment.parentId
+  }
+}
+
+export function addComment(comment){
+  return{
+    type: ADD_COMMENT,
     comment: comment,
     postId: comment.parentId
   }
