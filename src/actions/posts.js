@@ -35,6 +35,7 @@ export function loadCategoriesWisePosts(category){
   return function (dispatch){
     return api.getPostsByCategory(category).then(response => {
       if (response){
+        console.log("loadCategoriesWisePosts", response.data)
         dispatch(getPosts(response.data))
       }
     })
