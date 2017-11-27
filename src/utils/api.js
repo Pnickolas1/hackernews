@@ -28,7 +28,7 @@ export function getPostsByCategory(category){
 }
 
 export function getPostById(postId){
-  return axios.get(API_URL+"/posts/"+ postId + APP_HEADER)
+  return axios.get(API_URL+"/posts/"+ postId, APP_HEADER)
 }
 
 export function incrementPostVote(postId){
