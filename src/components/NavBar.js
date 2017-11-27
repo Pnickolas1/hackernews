@@ -6,7 +6,7 @@ export function Navbar() {
             <a className="navbar-brand" href={"/"}>Hackerclone</a>
             <ul className="navbar-nav mr-auto">
                 <li className="nav-item">
-                    <a className="nav-link" href={"/"}>Posts</a>
+                    <a className="nav-link fa FaHome" href={"/"}><i className="fa fa-bars"></i></a>
                 </li>
             </ul>
         </nav>
