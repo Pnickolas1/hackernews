@@ -55,3 +55,16 @@ class Vote extends Component {
     )
   }
 }
+
+function mapStateToProps(state){
+  return state
+}
+
+function mapDispatchToProps(dispatch){
+  let actions = {...postActions, ...commentActions}
+  return {
+    actions: bindActionCreators(actions, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Vote)
