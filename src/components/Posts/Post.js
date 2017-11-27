@@ -138,7 +138,7 @@ class Post extends Component{
             </div>
 
             <Modal isOpen={this.state.openModal} contentLabel="Create Modal">
-              <i className="fa fa-close pull-right" onClick={this.closeModal}></i>
+              <i className="fa fa-close pull-right" onClick={this.closeModal}>X</i>
               <div className="row">
                 <div className="col-md-12">
                   <h4>Edit Post</h4>
