@@ -16,7 +16,7 @@ export function getAllPosts(){
 }
 
 export function createPost(post){
-  return axios.put(API_URL+"/posts", post,APP_HEADER)
+  return axios.post(API_URL+"/posts", post,APP_HEADER)
 }
 
 export function updatePost(post){
